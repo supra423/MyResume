@@ -1,6 +1,6 @@
 body {
 	display: flex;
-	background-color: #82aff2;
+	background-color: #6799fc;
 	color: #000000;
 	min-width: 80vw;
 	min-height: 80vh;
@@ -11,6 +11,10 @@ body {
 	align-items: center;
 	justify-content: center;
 
+}
+
+body p {
+	font-size: 24px;
 }
 
 h1 {
@@ -25,19 +29,6 @@ h3 {
 	font-size: 32px;
 }
 
-#nameAndPortrait {
-	margin-top: 1vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 200px;
-}
-
-#portrait {
-	width: 500px;
-	border-radius: 100%;
-}
-
 #mainContent {
 	background-color: #d1e3ff;
 	padding: 2vw;
@@ -45,6 +36,39 @@ h3 {
 	min-height: 80vh;
 	margin: auto;
 	border-radius: 30px;
+	border: 2px solid #000000;
+}
+
+.contentSection {
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	background-color: #6799fc;
+	border: 2px solid #000000;
+	padding: 2vw;
+	border-radius: 30px;
+}
+
+#nameAndPortrait {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 200px;
+}
+
+#portrait {
+	width: 20vw;
+	border-radius: 100%;
+	border: 10px double #ffffff;
+}
+
+#navBar {
+	margin-top: 0;
+	display: flex;
+	font-size: 24px;
+	position: center;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
 }
 
 #aboutMeWithArrow {
@@ -53,24 +77,22 @@ h3 {
 	gap: 10px;
 }
 
-#aboutMe {
-	font-size: 20px;
+#aboutMeParagraph,
+#videoDescription {
+	background-color: #2e54a0;
 	display: none;
-	margin-left: 30px;
+	border-radius: 30px;
+	color: #ffffff;
 }
 
 .arrow {
 	width: 15px;
 }
 
-.toggleButtonWrapper {
+.buttonWrapper {
 	background: none;
 	border: none;
 	cursor: pointer;
-}
-
-#profile p {
-	font-size: 24px;
 }
 
 #socialMediaIcons {
@@ -79,5 +101,47 @@ h3 {
 }
 
 #socialMediaIcons img {
-	width: 50px;
+	width: 100px;
+	border: 2px solid #000000;
+	border-radius: 100%;
+	;
 }
+
+#programmingLanguages {
+	display: flex;
+	gap: 30px;
+}
+
+.languagesIcon {
+	width: 100px;
+	border-radius: 20px;
+}
+
+#javaIcon {
+	background-color: #ffffff;
+}
+
+#rustIcon {
+	width: 150px;
+}
+
+#videoContainer {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+#projectVideo {
+	width: 90%;
+	border: 2px solid #000000;
+}
+
+/* <img src="assets/c-icon.png" alt="C icon" id="cIcon"> */
+/* <img src="assets/python-icon.png" alt="Python icon" id="pythonIcon"> */
+/* <img src="assets/java-icon.png" alt="Java icon"> */
+/* <img src="assets/javascript-icon.png" alt="JavaScript icon"> */
+/* <img src="assets/rust-icon.png" alt="Rust icon" id="rustIcon"> */
+/* <img src="assets/lua-icon.png" alt="Lua icon"> */
+/* <img src="assets/bash-icon.png" alt="Bash icon" id="bashIcon"> */

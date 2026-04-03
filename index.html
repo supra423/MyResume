@@ -10,22 +10,38 @@
 
 <body>
 	<div id="mainContent">
-		<div id="nameAndPortrait">
-			<h1>Hi, I am Alexus!</h1>
+		<header>
+			<div id='navBar' class='contentSection'>
+				<a href="#mainContent">Home</a>
+				<a href="#profile">Profile</a>
+				<a href="#education">Education</a>
+				<a href="#skills">Skills</a>
+				<a href="#projects">Projects/Portfolio</a>
+				<a href="#contact">Contact</a>
+			</div>
+		</header>
+		<div id="nameAndPortrait" class='contentSection'>
+			<div>
+				<h1>Hello, World!</h1>
+				<h2>I'm Alexus Roa!</h2>
+			</div>
 			<img src="assets/portrait.png" alt="picture of me" id="portrait">
 		</div>
-		<div id="aboutMeWithArrow">
-			<h2>About Me</h2>
-			<button class="toggleButtonWrapper">
-				<img src="assets/arrow-down-icon.png" alt="arrow down to show about me" class="arrow">
-			</button>
+		<div id="aboutMe" class='contentSection'>
+			<div id="aboutMeWithArrow">
+				<h2>About Me</h2>
+				<button class="buttonWrapper">
+					<img src="assets/arrow-down-icon.png" alt="arrow down to show about me" class="arrow" id="dropArrowAboutMe">
+				</button>
+			</div>
+			<p id="aboutMeParagraph" class='contentSection'>
+				I am a 20-year-old student currently pursuing an undergraduate degree in Information Technology. I have a
+				passion
+				for technology and programming, and I enjoy learning new skills in the field. In my free time, I like to explore
+				different programming languages and work on personal projects to enhance my coding abilities.
+			</p>
 		</div>
-		<p id="aboutMe">
-			I am a 20-year-old student currently pursuing an undergraduate degree in Information Technology. I have a passion
-			for technology and programming, and I enjoy learning new skills in the field. In my free time, I like to explore
-			different programming languages and work on personal projects to enhance my coding abilities.
-		</p>
-		<div id="profile">
+		<div id="profile" class='contentSection'>
 			<h2>Profile</h2>
 			<ul>
 				<li>
@@ -37,29 +53,98 @@
 					<p>20</p>
 				</li>
 				<li>
-					<h3>Birthdate</31>
-						<p>April 23, 2005</p>
+					<h3>Birthdate</h3>
+					<p>April 23, 2005</p>
 				</li>
 				<li>
 					<h3>Address</h3>
 					<p>NHA, Kauswagan, Cagayan de Oro City</p>
+		</div>
+		<div class='contentSection'>
+			<h2>Find Me On</h2>
+			<div id="socialMediaIcons">
+				<a href="https://www.facebook.com/alexus.enzo.895737" target="_blank">
+					<img src="assets/facebook-icon.png" alt="Facebook link">
+				</a>
+				<a href="https://www.instagram.com/anabolexus.c/" target="_blank">
+					<img src="assets/instagram-icon.png" alt="Instagram link">
+				</a>
+				<a href="https://github.com/supra423" target="_blank">
+					<img src="assets/github-icon.png" alt="Github link">
+				</a>
+			</div>
+		</div>
+		</li>
+		</ul>
+		<div id="education" class='contentSection'>
+			<h2>Education</h2>
+			<ul>
+				<li>
+					<h3 id="primarySchool">Primary School</h3>
+					<p>Blessed Juana Condesa School</p>
 				</li>
 				<li>
-					<h3>Find Me On</h3>
-					<div id="socialMediaIcons">
-						<a href="https://www.facebook.com/alexus.enzo.895737" target="_blank">
-							<img src="assets/facebook-icon.png" alt="Facebook link">
-						</a>
-						<a href="https://www.instagram.com/anabolexus.c/" target="_blank">
-							<img src="assets/instagram-icon.png" alt="Instagram link">
-						</a>
-						<a href="https://github.com/supra423" target="_blank">
-							<img src="assets/github-icon.png" alt="Github link">
-						</a>
+					<h3 id="secondarySchool">Secondary School</h3>
+					<p>Corpus Christi School</p>
+				</li>
+				<li>
+					<h3 id="tertiaryEducation">Tertiary Education</h3>
+					<p>University of Science and Technology of Southern Philippines</p>
+				</li>
+			</ul>
+		</div>
+		<div id="skills" class='contentSection'>
+			<h2>Skills</h2>
+			<ul>
+				<li>
+					<h3>Programming Languages</h3>
+					<p>C, Python, Java, JavaScript, Rust, Lua, and Bash</p>
+					<div id="programmingLanguages">
+						<img src="assets/c-icon.png" alt="C icon" class='languagesIcon'>
+						<img src="assets/python-icon.png" alt="Python icon" class='languagesIcon'>
+						<img src="assets/java-icon.png" alt="Java icon" class='languagesIcon' id="javaIcon">
+						<img src="assets/javascript-icon.png" alt="JavaScript icon" class='languagesIcon'>
+						<img src="assets/rust-icon.png" alt="Rust icon" id="rustIcon" class='languagesIcon'>
+						<img src="assets/lua-icon.png" alt="Lua icon" class='languagesIcon'>
+						<img src="assets/bash-icon.png" alt="Bash icon" class='languagesIcon'>
 					</div>
 				</li>
 			</ul>
 		</div>
+
+		<div id="projects" class='contentSection'>
+			<h2>Projects/Portfolio</h2>
+			<h3 id="videoTitle">Project Title: sizeof</h3>
+			<h3>Video Description</h3>
+			<p id="videoDescription" class='contentSection'>
+				sizeof is a simple CLI program written in C that I created to check the "size of" a particular file or
+				directory. If the argument that is passed to the program is a file, it displays the size of the file in bytes,
+				the output may contain extra units of measurement (KiB, MiB, and GiB) depending on the size of the
+				file. Otherwise, if the argument passed is a directory, the program will recursively check each file and
+				subdirectories inside the directory and sums up the total size of the directory. This works almost exactly
+				like the "du" command in Linux, but with more varied output and I fixed a small bug that the "du" command has
+				where it includes the size of files that aren't supposed to be included like files inside directories like /run
+				or /proc in a Linux machine, this results in the output displaying over 130TB which is insane. The name of the
+				program comes from the "sizeof" operator in C which is used to determine the size of a data type or variable in
+				bytes, and I thought it would be a fitting name for this program since it also determines the size of files and
+				directories.
+			</p>
+			<div id="videoContainer">
+				<button class='buttonWrapper' id="prevVideo">
+					<img src="assets/arrow-left-icon.png" alt="previous video" class='arrow'>
+				</button>
+				<video src="assets/sizeof.mp4" controls muted id="projectVideo"></video>
+				<button class='buttonWrapper' id="nextVideo">
+					<img src="assets/arrow-right-icon.png" alt="next video" class='arrow'>
+				</button>
+			</div>
+
+		</div>
+
+		<div id="contact" class='contentSection'>
+			<h2>Contact</h2>
+		</div>
+
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script src="script.js"></script>
