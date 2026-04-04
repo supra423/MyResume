@@ -27,10 +27,12 @@ const videosDescriptions = [
 $(document).ready(function() {
 	const videos = ['assets/sizeof.mp4', 'assets/2048.mp4', 'assets/pacman.mp4'];
 	const videosTitles = ['Project Title: sizeof', 'Project Title: 2048', 'Project Title: PacMan'];
-	const buttonWrapper = document.querySelector('.buttonWrapper');
+	const aboutMeButtonWrapper = document.getElementById('aboutMeButtonWrapper');
 	const aboutMeParagraph = document.getElementById('aboutMeParagraph');
+	const videoDescriptionButtonWrapper = document.getElementById('videoDescriptionButtonWrapper');
+	const videoDescription = document.getElementById('videoDescription');
 
-	buttonWrapper.addEventListener('click', function() {
+	aboutMeButtonWrapper.addEventListener('click', function() {
 		if (aboutMeParagraph.style.display === 'block') {
 			aboutMeParagraph.style.display = 'none';
 		} else {
@@ -41,6 +43,20 @@ $(document).ready(function() {
 			$('#dropArrowAboutMe').attr('src', 'assets/arrow-up-icon.png');
 		} else {
 			$('#dropArrowAboutMe').attr('src', 'assets/arrow-down-icon.png');
+		}
+	});
+
+	videoDescriptionButtonWrapper.addEventListener('click', function() {
+		if (videoDescription.style.display === 'block') {
+			videoDescription.style.display = 'none';
+		} else {
+			videoDescription.style.display = 'block';
+		}
+
+		if ($('#dropArrowVideoDescription').attr('src') === 'assets/arrow-down-icon.png') {
+			$('#dropArrowVideoDescription').attr('src', 'assets/arrow-up-icon.png');
+		} else {
+			$('#dropArrowVideoDescription').attr('src', 'assets/arrow-down-icon.png');
 		}
 	});
 
@@ -64,5 +80,4 @@ $(document).ready(function() {
 		$('#videoTitle').text(videosTitles[currentVideoIndex]);
 		$('#videoDescription').text(videosDescriptions[currentVideoIndex]);
 	});
-
 });

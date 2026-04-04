@@ -30,7 +30,7 @@
 		<div id="aboutMe" class='contentSection'>
 			<div id="aboutMeWithArrow">
 				<h2>About Me</h2>
-				<button class="buttonWrapper">
+				<button id="aboutMeButtonWrapper" class='buttonWrapper'>
 					<img src="assets/arrow-down-icon.png" alt="arrow down to show about me" class="arrow" id="dropArrowAboutMe">
 				</button>
 			</div>
@@ -115,7 +115,13 @@
 		<div id="projects" class='contentSection'>
 			<h2>Projects/Portfolio</h2>
 			<h3 id="videoTitle">Project Title: sizeof</h3>
-			<h3>Video Description</h3>
+			<div id='videoDescriptionWithArrow'>
+				<h3>Video Description</h3>
+				<button id="videoDescriptionButtonWrapper" class="buttonWrapper">
+					<img src="assets/arrow-down-icon.png" alt="arrow down to show about me" class="arrow"
+						id="dropArrowVideoDescription">
+				</button>
+			</div>
 			<p id="videoDescription" class='contentSection'>
 				sizeof is a simple CLI program written in C that I created to check the "size of" a particular file or
 				directory. If the argument that is passed to the program is a file, it displays the size of the file in bytes,
@@ -133,7 +139,7 @@
 				<button class='buttonWrapper' id="prevVideo">
 					<img src="assets/arrow-left-icon.png" alt="previous video" class='arrow'>
 				</button>
-				<video src="assets/sizeof.mp4" controls muted id="projectVideo"></video>
+				<video src="assets/sizeof.mp4" controls muted id="projectVideo" type='video/mp4'></video>
 				<button class='buttonWrapper' id="nextVideo">
 					<img src="assets/arrow-right-icon.png" alt="next video" class='arrow'>
 				</button>

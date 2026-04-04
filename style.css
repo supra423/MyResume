@@ -71,7 +71,8 @@ h3 {
 	gap: 50px;
 }
 
-#aboutMeWithArrow {
+#aboutMeWithArrow,
+#videoDescriptionWithArrow {
 	display: flex;
 	align-items: center;
 	gap: 10px;
