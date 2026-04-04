@@ -83,9 +83,11 @@ $(document).ready(function() {
 
 	const form = document.querySelector('form');
 	form.addEventListener('submit', function(e) {
-		e.preventDefault();  // Stops the page refresh
+		e.preventDefault();
+		const name = document.getElementById('name').value;
+		const email = document.getElementById('email').value;
+		const message = document.getElementById('message').value;
 
-		// Now do whatever you want
-		console.log('Form submitted without refresh!');
+		console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
 	});
 });
