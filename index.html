@@ -9,17 +9,15 @@
 </head>
 
 <body>
+	<div id='navBar' class='contentSection'>
+		<a href="#mainContent">Home</a>
+		<a href="#profile">Profile</a>
+		<a href="#education">Education</a>
+		<a href="#skills">Skills</a>
+		<a href="#projects">Projects/Portfolio</a>
+		<a href="#contact">Contact</a>
+	</div>
 	<div id="mainContent">
-		<header>
-			<div id='navBar' class='contentSection'>
-				<a href="#mainContent">Home</a>
-				<a href="#profile">Profile</a>
-				<a href="#education">Education</a>
-				<a href="#skills">Skills</a>
-				<a href="#projects">Projects/Portfolio</a>
-				<a href="#contact">Contact</a>
-			</div>
-		</header>
 		<div id="nameAndPortrait" class='contentSection'>
 			<div>
 				<h1>Hello, World!</h1>
@@ -105,7 +103,7 @@
 						<img src="assets/java-icon.png" alt="Java icon" class='languagesIcon' id="javaIcon">
 						<img src="assets/javascript-icon.png" alt="JavaScript icon" class='languagesIcon'>
 						<img src="assets/rust-icon.png" alt="Rust icon" id="rustIcon" class='languagesIcon'>
-						<img src="assets/lua-icon.png" alt="Lua icon" class='languagesIcon'>
+						<img src="assets/lua-icon.png" alt="Lua icon" id="luaIcon" class='languagesIcon'>
 						<img src="assets/bash-icon.png" alt="Bash icon" class='languagesIcon'>
 					</div>
 				</li>
@@ -144,13 +142,28 @@
 					<img src="assets/arrow-right-icon.png" alt="next video" class='arrow'>
 				</button>
 			</div>
-
 		</div>
-
 		<div id="contact" class='contentSection'>
 			<h2>Contact</h2>
+			<form id="contactForm">
+				<label for="name">Name:</label>
+				<br>
+				<input type="text" id="name" required>
+				<br>
+				<br>
+				<label for="email">Email:</label>
+				<br>
+				<input type="email" id="email" required>
+				<br>
+				<br>
+				<label for="message">Message:</label>
+				<br>
+				<textarea id="message" required></textarea>
+				<br>
+				<br>
+				<button type="submit" id='submit'>Send Message</button>
+			</form>
 		</div>
-
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script src="script.js"></script>

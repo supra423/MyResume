@@ -80,4 +80,12 @@ $(document).ready(function() {
 		$('#videoTitle').text(videosTitles[currentVideoIndex]);
 		$('#videoDescription').text(videosDescriptions[currentVideoIndex]);
 	});
+
+	const form = document.querySelector('form');
+	form.addEventListener('submit', function(e) {
+		e.preventDefault();  // Stops the page refresh
+
+		// Now do whatever you want
+		console.log('Form submitted without refresh!');
+	});
 });
