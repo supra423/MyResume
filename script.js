@@ -1,5 +1,3 @@
-let currentVideoIndex = 0;
-
 const videosDescriptions = [
 	`sizeof is a simple CLI program written in C that I created to check the "size of" a particular file or directory.
 	 If the argument that is passed to the program is a file, it displays the size of the file in bytes, the output may 
@@ -23,64 +21,55 @@ const videosDescriptions = [
 	ways to create windows, handle input, and render graphics, so I had to implement all the game logic and mechanics myself, which was 
 	a fun challenge.`
 ];
+let currentVideoIndex = 0;
+const videos = ['assets/sizeof.mp4', 'assets/2048.mp4', 'assets/pacman.mp4'];
+const videosTitles = ['Project Title: sizeof', 'Project Title: 2048', 'Project Title: PacMan'];
+const aboutMeButtonWrapper = document.getElementById('aboutMeButtonWrapper');
+const aboutMeParagraph = document.getElementById('aboutMeParagraph');
+const videoDescriptionButtonWrapper = document.getElementById('videoDescriptionButtonWrapper');
+const videoDescription = document.getElementById('videoDescription');
+
+function buttonWrapperHelper(buttonWrapper, content, arrowId) {
+	buttonWrapper.addEventListener('click', function() {
+		if (content.style.display === 'block') {
+			content.style.display = 'none';
+		} else {
+			content.style.display = 'block';
+		}
+
+		if ($(`#${arrowId}`).attr('src') === 'assets/arrow-down-icon.png') {
+			$(`#${arrowId}`).attr('src', 'assets/arrow-up-icon.png');
+		} else {
+			$(`#${arrowId}`).attr('src', 'assets/arrow-down-icon.png');
+		}
+	});
+}
+
+function videoButtonsHelper(videoButton, isNext) {
+	$(`#${videoButton}`).on('click', function() {
+		if (isNext) {
+			currentVideoIndex += 1;
+			if (currentVideoIndex >= videos.length) {
+				currentVideoIndex = 0;
+			}
+		} else {
+			currentVideoIndex -= 1;
+			if (currentVideoIndex < 0) {
+				currentVideoIndex = videos.length - 1;
+			}
+		}
+		$('#projectVideo').attr('src', videos[currentVideoIndex]);
+		$('#videoTitle').text(videosTitles[currentVideoIndex]);
+		$('#videoDescription').text(videosDescriptions[currentVideoIndex]);
+	});
+}
+
 
 $(document).ready(function() {
-	const videos = ['assets/sizeof.mp4', 'assets/2048.mp4', 'assets/pacman.mp4'];
-	const videosTitles = ['Project Title: sizeof', 'Project Title: 2048', 'Project Title: PacMan'];
-	const aboutMeButtonWrapper = document.getElementById('aboutMeButtonWrapper');
-	const aboutMeParagraph = document.getElementById('aboutMeParagraph');
-	const videoDescriptionButtonWrapper = document.getElementById('videoDescriptionButtonWrapper');
-	const videoDescription = document.getElementById('videoDescription');
-
-	aboutMeButtonWrapper.addEventListener('click', function() {
-		if (aboutMeParagraph.style.display === 'block') {
-			aboutMeParagraph.style.display = 'none';
-		} else {
-			aboutMeParagraph.style.display = 'block';
-		}
-
-		if ($('#dropArrowAboutMe').attr('src') === 'assets/arrow-down-icon.png') {
-			$('#dropArrowAboutMe').attr('src', 'assets/arrow-up-icon.png');
-		} else {
-			$('#dropArrowAboutMe').attr('src', 'assets/arrow-down-icon.png');
-		}
-	});
-
-	videoDescriptionButtonWrapper.addEventListener('click', function() {
-		if (videoDescription.style.display === 'block') {
-			videoDescription.style.display = 'none';
-		} else {
-			videoDescription.style.display = 'block';
-		}
-
-		if ($('#dropArrowVideoDescription').attr('src') === 'assets/arrow-down-icon.png') {
-			$('#dropArrowVideoDescription').attr('src', 'assets/arrow-up-icon.png');
-		} else {
-			$('#dropArrowVideoDescription').attr('src', 'assets/arrow-down-icon.png');
-		}
-	});
-
-
-	$('#nextVideo').on('click', function() {
-		currentVideoIndex += 1;
-		if (currentVideoIndex >= videos.length) {
-			currentVideoIndex = 0;
-		}
-		$('#projectVideo').attr('src', videos[currentVideoIndex]);
-		$('#videoTitle').text(videosTitles[currentVideoIndex]);
-		$('#videoDescription').text(videosDescriptions[currentVideoIndex]);
-	});
-
-	$('#prevVideo').on('click', function() {
-		currentVideoIndex -= 1;
-		if (currentVideoIndex < 0) {
-			currentVideoIndex = videos.length - 1;
-		}
-		$('#projectVideo').attr('src', videos[currentVideoIndex]);
-		$('#videoTitle').text(videosTitles[currentVideoIndex]);
-		$('#videoDescription').text(videosDescriptions[currentVideoIndex]);
-	});
-
+	buttonWrapperHelper(aboutMeButtonWrapper, aboutMeParagraph, 'dropArrowAboutMe');
+	buttonWrapperHelper(videoDescriptionButtonWrapper, videoDescription, 'dropArrowVideoDescription');
+	videoButtonsHelper('nextVideo', true)
+	videoButtonsHelper('prevVideo', false)
 	const form = document.querySelector('form');
 	form.addEventListener('submit', function(e) {
 		e.preventDefault();
