@@ -64,7 +64,6 @@ function videoButtonsHelper(videoButton, isNext) {
 	});
 }
 
-
 $(document).ready(function() {
 	buttonWrapperHelper(aboutMeButtonWrapper, aboutMeParagraph, 'dropArrowAboutMe');
 	buttonWrapperHelper(videoDescriptionButtonWrapper, videoDescription, 'dropArrowVideoDescription');
