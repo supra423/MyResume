@@ -12,6 +12,7 @@ Where AI was used (short description):
 
 AI was primarily used to solve styling issues and bugs in the code. I also used it
 to generate some of the code for the project since my editor has Github Copilot
-configured in it, but I was careful to review the generated code because 
+configured in it, but I was careful to review the generated code because the code
+it provides is not always correct.
 
 I confirm that I reviewed, tested, and understood the final code I submitted.
